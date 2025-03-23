@@ -160,7 +160,12 @@ export const CONTENT_OF_MODULE = ({ intl }) => {
       {
         type: 'input',
         attributeId: 'workExpYear',
-        displayName: intl.formatMessage({ id: '工作经验' }),
+        displayName: intl.formatMessage({ id: '年龄' }),
+      },
+      {
+        type: 'input',
+        attributeId: 'nowPlace',
+        displayName: intl.formatMessage({ id: '当前工作地' }),
       },
       {
         type: 'input',

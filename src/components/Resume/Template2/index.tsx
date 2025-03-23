@@ -126,7 +126,17 @@ export const Template2: React.FC<Props> = props => {
                     style={{ color: theme.color, opacity: 0.85 }}
                   />
                   <span>
-                    <FormattedMessage id="工作经验" />: {profile.workExpYear}
+                    <FormattedMessage id="年龄" />: {profile.workExpYear}
+                  </span>
+                </div>
+              )}
+              {profile?.nowPlace && (
+                <div className="work-place">
+                  <EnvironmentFilled
+                    style={{ color: theme.color, opacity: 0.85 }}
+                  />
+                  <span>
+                    <FormattedMessage id="当前工作地" />: {profile.nowPlace}
                   </span>
                 </div>
               )}
@@ -223,15 +233,7 @@ export const Template2: React.FC<Props> = props => {
             })}
           </Wrapper>
         ) : null}
-        <Wrapper
-          title={<FormattedMessage id="自我介绍" />}
-          className="section section-aboutme"
-          color={theme.color}
-        >
-          {aboutme.map((d, idx) => (
-            <div key={`${idx}`}>{d}</div>
-          ))}
-        </Wrapper>
+
         {/* 专业技能 */}
         {skillList?.length ? (
           <Wrapper
@@ -356,6 +358,28 @@ export const Template2: React.FC<Props> = props => {
                       <span className="project-content">
                         {project.project_content}
                       </span>
+                    </div>
+                  </div>
+                ) : null
+              )}
+            </div>
+          </Wrapper>
+        ) : null}
+
+        {awardList?.length ? (
+          <Wrapper
+            className="skill"
+            // title=<FormattedMessage id="更多信息" />
+            title={titleNameMap.awardList}
+            color={theme.color}
+          >
+            <div className="section section-award">
+              {_.map(awardList, (award, idx) =>
+                award ? (
+                  <div className="section-item" key={idx.toString()}>
+                    <div className="section-info">
+                      <span className="dd">{award.award_info}</span>
+                      <span className="info-time">{award.award_time}</span>
                     </div>
                   </div>
                 ) : null

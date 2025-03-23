@@ -15,10 +15,12 @@ export type ResumeConfig = {
     email?: string;
     github?: string;
     zhihu?: string;
-    /** 工作经验 xx 年 */
+    /** 年龄 xx 年 */
     workExpYear?: string;
     /** 期望工作地 */
     workPlace?: string;
+    /** 当前工作地 */
+    nowPlace?: string;
     /** 职位 */
     positionTitle?: string;
   };
